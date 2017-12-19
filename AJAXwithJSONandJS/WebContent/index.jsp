@@ -38,12 +38,31 @@ function ajaxAsyncRequest(){
 	xmlhttp.send(null)
 }
 </script>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!--<link rel="stylesheet" href="/resources/demos/style.css"> -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+$('#cmd').click(function(){
+    $('#content').append('<br>a datepicker <input class="datepicker_recurring_start"/>');
+});
+$('body').on('focus',".datepicker_recurring_start", function(){
+    $(this).datepicker();
+});
+});
+</script>
 </head>
 <body>
 Name:<input type="text" id="fullName"/>
 
 <input type="button" value="Send" id="bttHello" onclick="javascript: ajaxAsyncRequest();">
-
 <span id="result1"></span>
+
+<div id="content">
+    a datepicker <input class="datepicker_recurring_start"/>
+</div>
+<button id="cmd">add a datepicker</button>
 </body>
 </html>
